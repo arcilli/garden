@@ -23,5 +23,7 @@ services:
         port: http
 
 tasks:
-  - name: test
-    command: ["sh", "-c", "echo task output"]
+  - name: test1
+    command: ["sh", "-c", "exit 129"]
+  - name: test2
+    command: ["sh", "-c", "test.sh"]

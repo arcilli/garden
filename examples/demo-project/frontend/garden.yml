@@ -20,8 +20,43 @@ services:
       - backend
 tests:
   - name: unit
-    args: [npm, test]
+    args: [ npm, test ]
+
   - name: integ
-    args: [npm, run, integ]
+    command: [ "npm" ]
+    args: [ "run", "integ" ]
     dependencies:
       - frontend
+#    artifacts:
+#      - source: "/app/package.json"
+#        target: "./output-artifacts"
+
+  - name: oom
+    command: [ "npm" ]
+    args: [ "run", "oom" ]
+    dependencies:
+      - frontend
+    memory:
+      min: 1000
+      max: 1000
+#    artifacts:
+#      - source: "/app/package.json"
+#        target: "./output-artifacts"
+
+  - name: assertion
+    command: [ "npm" ]
+    args: [ "run", "assertionError" ]
+    dependencies:
+      - frontend
+#    artifacts:
+#      - source: "/app/package.json"
+#        target: "./output-artifacts"
+
+  - name: runtime
+    command: [ "npm" ]
+    args: [ "run", "runtimeError" ]
+    dependencies:
+      - frontend
+#    artifacts:
+#      - source: "/app/package.json"
+#        target: "./output-artifacts"

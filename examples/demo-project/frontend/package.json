@@ -6,14 +6,18 @@
   "scripts": {
     "start": "node main.js",
     "test": "echo OK",
-    "integ": "node_modules/mocha/bin/mocha test/integ.js"
+    "integ": "node_modules/mocha/bin/mocha test/integ.js",
+    "oom": "node_modules/mocha/bin/mocha test/oom.js",
+    "assertionError": "node_modules/mocha/bin/mocha test/assertionError.js",
+    "runtimeError": "node_modules/mocha/bin/mocha test/runtimeError.js"
   },
   "author": "garden.io <info@garden.io>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "mocha": "^9.2.0"
   },
   "devDependencies": {
     "mocha": "^5.1.1",
